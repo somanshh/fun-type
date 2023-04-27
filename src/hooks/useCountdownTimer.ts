@@ -36,7 +36,7 @@ const useCountdownTimer  = (seconds : number) => {
         }
     } , [timeLeft , intervalRef])
 
-    return { timeLeft ,- startCountdown , resetCountdown };
+    return { timeLeft , startCountdown , resetCountdown };
 }
 
 export default useCountdownTimer;
