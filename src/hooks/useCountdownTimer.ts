@@ -24,6 +24,7 @@ const useCountdownTimer  = (seconds : number) => {
 
         if(intervalRef.current)  clearInterval(intervalRef.current)
         
+        setTimeLeft(seconds);
     } , [seconds]);
 
     // when the countdown reaches 0 , clear the countdown interval

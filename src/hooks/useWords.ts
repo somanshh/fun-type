@@ -8,6 +8,7 @@ const generateWords = ( count : number ) => {
 } 
 
 const useWords = ( count: number ) => {
+    
     const [words , setWords] = useState<string> (generateWords(count));
 
     const updateWords = useCallback(() => {

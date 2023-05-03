@@ -1,4 +1,4 @@
-import { faker } from "@faker-js/faker";
+// import { faker } from "@faker-js/faker";
 import RestartButton from "./components/RestartButton";
 import { Results } from "./components/Results";
 import UserTypingInput from "./components/UserTypingInput";
@@ -6,18 +6,19 @@ import useEngine from "./hooks/useEngine";
 import { calculateAccuracyPercentage } from "./utils/helper";
 // import { State } from- "./hooks/useEngine";
 
+// add highlight static text on scrolling in this website
 
 function App() {
 
   const {state , words , timeLeft , typed  , restart , errors , totalTyped } = useEngine();
 
   return (
-    <>
+    <div style={ {width: 600}}>
       <CountDownTimer timeLeft={timeLeft} />
 
-      <WordsContainer>
+      <WordsContainer >
         <GenerateWords words={words} />
-        <UserTypingInput className="absolute inset-0" words={words} userInput={typed} />
+        <UserTypingInput className="absolute inset-0 w-100px" words={words} userInput={typed} />
       </WordsContainer>
 
       <RestartButton
@@ -32,7 +33,7 @@ function App() {
         accuracyPercentage={calculateAccuracyPercentage(errors , totalTyped)}
         total={totalTyped}
       />
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,7 @@
+ 
+ .container {
+    border-color: rgb(52, 56, 58);
+    min-width: -webkit-fill-available;
+    margin-left: 20px;
+    margin-right: 50px;
+ }

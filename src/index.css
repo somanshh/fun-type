@@ -4,6 +4,6 @@
 
  @layer base{
   body {
-    @apply min-h-screen bg-slate-800 md:container md:mx-auto grid place-items-center font-mono tracking-wider px-4;
+    @apply min-h-screen bg-slate-800 xl:container xl:mx-auto grid place-items-center font-mono tracking-wider px-4;
   }
  };  
