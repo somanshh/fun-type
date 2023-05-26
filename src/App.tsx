@@ -4,17 +4,20 @@ import { Results } from "./components/Results";
 import UserTypingInput from "./components/UserTypingInput";
 import useEngine from "./hooks/useEngine";
 import { calculateAccuracyPercentage } from "./utils/helper";
+import NavBar from "./components/NavBar";
 // import { State } from- "./hooks/useEngine";
 
 // add highlight static text on scrolling in this website
 
 function App() {
 
-  const {state , words , timeLeft , typed  , restart , errors , totalTyped } = useEngine();
+  const { state , words , timeLeft , typed  , restart , errors , totalTyped } = useEngine();
 
   return (
-    <div style={ {width: 600}}>
-      <CountDownTimer timeLeft={timeLeft} />
+    <div style={ {width: 1500}}>
+      <NavBar />
+        
+        <CountDownTimer timeLeft={timeLeft} />
 
       <WordsContainer >
         <GenerateWords words={words} />
@@ -22,31 +25,31 @@ function App() {
       </WordsContainer>
 
       <RestartButton
-        className={"mx-auto mt-10 text-slate-500"}
-        onRestart={restart}
+      className={"mx-auto mt-10 text-slate-500"}
+      onRestart={restart}
       />
 
       <Results
-        state= {state}
-        className="mt-10"
+      state= {state}
+      className="mt-10"
         errors={errors}
         accuracyPercentage={calculateAccuracyPercentage(errors , totalTyped)}
         total={totalTyped}
-      />
+        />
     </div>
   );
 }
 
 const WordsContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="relative max-w-xl mt-3 text-3xl leading-relaxed break-all">
+    <div className="relative max-w-full  text-3xl leading-relaxed break-all">
       {children}
     </div>
   );
 };
 
 const GenerateWords = ({ words }: { words: string }) => {
-  return <div className=" text-slate-500">{words}</div>;
+  return <div className=" text-slate-400">{words}</div>;
 };
 
 const CountDownTimer = ({ timeLeft }: { timeLeft: number }) => {

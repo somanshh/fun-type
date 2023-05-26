@@ -13,7 +13,7 @@ const UserTypingInput = ({
   const typedCharacters = userInput.split("");
 
   return (
-    <div className={className}>
+    <div className={`w-full  ${className}`}>
 
       {typedCharacters.map((char, index) => {
         return <Character
@@ -38,9 +38,10 @@ const Character = ({ actual , expected }: { actual: string  , expected: string }
       // if the typed word is not correct that make the color red
         "text-red-500": !isCorrect && !isWhiteSpace ,
         // if it correct then make it yellow
-        "text-yellow-300": isCorrect && !isWhiteSpace,
+        "text-green-400": isCorrect && !isWhiteSpace,
         // if expected char is a blankspace and user typed something else then make its bg red
         "bg-red-500/50": !isCorrect && isWhiteSpace,
+        "whitespace-nowrap": true,
       })
     }>
       {expected}
