@@ -54,7 +54,7 @@ export const Results = ({
           
           className="text-red-500 text-2xl font-semibold"
         >
-          Erros : {errors}
+          Errors : {errors}
         </motion.li>
 
         <motion.li
