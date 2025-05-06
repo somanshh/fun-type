@@ -1,6 +1,5 @@
 import { time } from "console";
 import { useRef , useCallback , useState, useEffect } from "react"
-// import { setInterval } from "timers/promises";
 
 const useCountdownTimer  = (seconds : number) => {
 
