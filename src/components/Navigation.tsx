@@ -19,7 +19,7 @@ const Navigation: React.FC = () => {
         to="/signup"
         className={location.pathname === "/signup" ? "active" : ""}
       >
-        Sign Up
+        Sign UP
       </NavLink>
     </nav>
   );
